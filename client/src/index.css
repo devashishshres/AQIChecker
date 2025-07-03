@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import "tailwindcss";
 
 
@@ -12,6 +13,14 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Inter", sans-serif;
+    color: white;
     font-optical-sizing: auto;
+    min-height: 100vh;
+    background: linear-gradient(
+      to bottom right,
+      #1F204C 0%,
+      #211B4D 50%,
+      #0D0720 100%
+    );
   }
 }
