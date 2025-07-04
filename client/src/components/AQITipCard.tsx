@@ -1,4 +1,4 @@
-import { getAQITip } from "../utils/AQIUtils";
+import { getAQITip } from "../utils/aqiUtils";
 
 export const AQITipCard = ({ aqi }: { aqi: number }) => {
   return (

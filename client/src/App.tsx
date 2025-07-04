@@ -3,7 +3,7 @@ import './App.css'
 import { Search } from './components/Search'
 import type { AQIResponse, aqiData } from './AQI';
 import { AQIGauge } from './components/AQIGauge';
-import { getAQIColorAndLabel } from './utils/AQIUtils';
+import { getAQIColorAndLabel } from './utils/aqiUtils';
 import { AQITipCard } from './components/AQITipCard';
 
 
