@@ -2,6 +2,9 @@ import { useState } from 'react'
 import './App.css'
 import { Search } from './components/Search'
 import type { AQIResponse, aqiData } from './AQI';
+import { AQIGauge } from './components/AQIGauge';
+import { getAQIColorAndLabel } from './utils/AQIUtils';
+import { AQITipCard } from './components/AQITipCard';
 
 
 function App() {
@@ -26,7 +29,6 @@ function App() {
     try {
       const data = await fetchAqiData(city);
       setApiData(data.data);
-      console.log("👀 apiData:", data.data);
     } catch (error) {
       setError("Could not fetch API data! Error: " + (error as Error).message);
     } finally {
@@ -36,7 +38,7 @@ function App() {
 
   return (
     <main>
-      <div className='flex flex-col items-center min-h-screen gap-14'>
+      <div className='flex flex-col items-center max-h-screen gap-14'>
         <h1 className='mt-12 text-5xl font-semibold'>AirAware</h1>
         <Search city={city} setCity={setCity} handleSubmit={handleSubmit}/>
 
@@ -46,7 +48,8 @@ function App() {
 
         {apiData && (
           <div>
-            AQI: {apiData.aqi}
+            <AQIGauge value={Number(apiData.aqi)} text={getAQIColorAndLabel(Number(apiData.aqi)).label} color={getAQIColorAndLabel(Number(apiData.aqi)).color}/>
+            <AQITipCard aqi={Number(apiData.aqi)}/>
           </div>
         )}
       </div>
