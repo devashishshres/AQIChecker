@@ -8,7 +8,7 @@ Built with **React + TypeScript (Vite)** on the front-end and **Express + TypeSc
 ## Tech Stack
 | Layer | Stack |
 |-------|-------|
-| Front-end | React, TypeScript, Vite, Tailwind CSS, react-circular-progressbar |
+| Front-end | React, TypeScript, Tailwind CSS, react-circular-progressbar |
 | Back-end | Express, TypeScript, Axios |
 | Data | WAQI public API |
 
